@@ -1,9 +1,9 @@
-#define WIN32_LEAN_AND_MEAN // Dont include everything
-#include <windows.h> // Input windows commands
-#include <winuser.h>
+#define WIN32_LEAN_AND_MEAN // We don't want the extra stuff like MFC and such
+#include <windows.h>
+#include <WinUser.h>
 #include <XInput.h>     // XInput API
-#pragma comment(lib, "XInput.lib") // XInput setup
-#include<stdio.h> // included for console IO
+#pragma comment(lib, "XInput.lib")
+#include<stdio.h>
 
 // method prototypes
 void handleButtons();
@@ -37,7 +37,7 @@ int main() {
 			break;
 		}
 
-		Sleep(1);
+		Sleep(3);
 	}
 
 	return 0;
@@ -97,9 +97,6 @@ void handleButtons() {
 
 	*/
 
-
-	
-
 	if (bits & 0x0001) {
 		// then up dpad is pressed
 		printf("up\n");
@@ -150,9 +147,15 @@ void handleButtons() {
 	}
 	else if (bits & 0x4000) {
 		// x button
-		printf("x");
 
-		SendInput();
+		// need to stop this from double clicking
+
+		INPUT key;
+		key.type = INPUT_MOUSE;
+		key.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
+		SendInput(1, &key, sizeof(INPUT));
+		key.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+		SendInput(1, &key, sizeof(INPUT));
 
 	}
 	else if (bits & 0x8000) {
@@ -171,5 +174,4 @@ void initController() {
 	prevL_Y = state.Gamepad.sThumbLY;
 	prevR_X = state.Gamepad.sThumbRX;
 	prevR_Y = state.Gamepad.sThumbRY;
-
 }
