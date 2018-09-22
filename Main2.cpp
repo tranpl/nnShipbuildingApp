@@ -154,18 +154,21 @@ void handleButtons() {
 		key.type = INPUT_MOUSE;
 		key.mi.dwFlags = MOUSEEVENTF_LEFTDOWN;
 		SendInput(1, &key, sizeof(INPUT));
-		key.mi.dwFlags = MOUSEEVENTF_LEFTUP;
-		SendInput(1, &key, sizeof(INPUT));
+		//key.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+		//SendInput(1, &key, sizeof(INPUT));
 
 	}
 	else if (bits & 0x8000) {
 		// y button
 		printf("y");
 	}
+	else {
+		key.mi.dwFlags = MOUSEEVENTF_LEFTUP;
+		SendInput(1, &key, sizeof(INPUT));
+	}
 
 }
 
-// return true if setup works
 void initController() {
 	dwResult = XInputGetState(0, &state);
 
