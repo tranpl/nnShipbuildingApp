@@ -1,8 +1,8 @@
-#define WIN32_LEAN_AND_MEAN // We don't want the extra stuff like MFC and such
-#include <windows.h>
+#define WIN32_LEAN_AND_MEAN // Dont include everything
+#include <windows.h> // Input windows commands
 #include <XInput.h>     // XInput API
-#pragma comment(lib, "XInput.lib")
-#include<stdio.h>
+#pragma comment(lib, "XInput.lib") // XInput setup
+#include<stdio.h> // included for console IO
 
 // method prototypes
 void handleButtons();
@@ -96,6 +96,9 @@ void handleButtons() {
 
 	*/
 
+
+	
+
 	if (bits & 0x0001) {
 		// then up dpad is pressed
 		printf("up\n");
@@ -147,6 +150,8 @@ void handleButtons() {
 	else if (bits & 0x4000) {
 		// x button
 		printf("x");
+
+
 	}
 	else if (bits & 0x8000) {
 		// y button
