@@ -11,10 +11,11 @@ namespace NNConsole
     {
         static void Main(string[] args)
         {
+            Console.Write("Starting program.");
             Program program = new Program();
-            program.Test();
+            program.Start();
         }
-        public void Test()
+        public void Start()
             {
                 // Initialize DirectInput
                 var directInput = new DirectInput();
@@ -55,13 +56,21 @@ namespace NNConsole
                 // Acquire the joystick
                 joystick.Acquire();
 
+                var joystickState = new JoystickState();
                 // Poll events from joystick
                 while (true)
-                {
-                    joystick.Poll();
-                    var datas = joystick.GetBufferedData();
-                    foreach (var state in datas)
-                        Console.WriteLine(state);
+                    {
+                        joystick.Poll();
+                        var datas = joystick.GetBufferedData();
+                        foreach (var state in datas)
+                            if(state.Offset == JoystickOffset.X)
+                    {
+                            Console.WriteLine("Console State:" + state.Value);
+
+                    }
+
+                        //joystick.GetCurrentState(ref joystickState);
+                //Console.WriteLine("State: " + joystickState.X.ToString());
                 }
 
             }
