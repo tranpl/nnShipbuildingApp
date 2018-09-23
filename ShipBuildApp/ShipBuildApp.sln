@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ShipBuildApp", "ShipBuildApp\ShipBuildApp.vcxproj", "{31EA72EA-B66B-4A0A-9FC9-03A642BBA010}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NNConsole", "NNConsole\NNConsole.csproj", "{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,18 +25,6 @@ Global
 		{31EA72EA-B66B-4A0A-9FC9-03A642BBA010}.Release|x64.Build.0 = Release|x64
 		{31EA72EA-B66B-4A0A-9FC9-03A642BBA010}.Release|x86.ActiveCfg = Release|Win32
 		{31EA72EA-B66B-4A0A-9FC9-03A642BBA010}.Release|x86.Build.0 = Release|Win32
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Debug|x64.Build.0 = Debug|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Debug|x86.Build.0 = Debug|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Release|x64.ActiveCfg = Release|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Release|x64.Build.0 = Release|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Release|x86.ActiveCfg = Release|Any CPU
-		{270E8EA0-F3ED-4C79-BF21-3E2ED868027B}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
