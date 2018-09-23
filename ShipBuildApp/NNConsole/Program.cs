@@ -61,19 +61,19 @@ namespace NNConsole
                 while (true)
                     {
                         joystick.Poll();
+
                         var datas = joystick.GetBufferedData();
                         foreach (var state in datas)
-                            if(state.Offset == JoystickOffset.X)
-                    {
-                            Console.WriteLine("Console State:" + state.Value);
+                             Console.WriteLine("Console State:" + state.Value);
+                        var currentState = joystick.GetCurrentState().ToString();
+                Console.WriteLine(currentState);
+                //bool buttonA = buttons[0] >= 128;
 
-                    }
-
-                        //joystick.GetCurrentState(ref joystickState);
+                //joystick.GetCurrentState(ref joystickState);
                 //Console.WriteLine("State: " + joystickState.X.ToString());
-                }
-
             }
+
+        }
 
     }
 }
